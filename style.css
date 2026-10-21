@@ -1,0 +1,147 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #0f172a;
+    color: #f8fafc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.container {
+    width: 100%;
+    max-width: 450px;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+header h1 {
+    color: #38bdf8;
+}
+
+header p {
+    color: #94a3b8;
+    font-size: 0.9rem;
+}
+
+.balance-card {
+    background-color: #1e293b;
+    padding: 20px;
+    border-radius: 12px;
+    text-align: center;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+.balance-card h2 {
+    font-size: 2rem;
+    margin: 10px 0 15px;
+    color: #38bdf8;
+}
+
+.summary-box {
+    display: flex;
+    justify-content: space-between;
+    background-color: #0f172a;
+    padding: 12px;
+    border-radius: 8px;
+}
+
+.money {
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+.money.plus { color: #34d399; }
+.money.minus { color: #f87171; }
+
+.form-container, .history-container {
+    background-color: #1e293b;
+    padding: 20px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+}
+
+h3 {
+    margin-bottom: 12px;
+    font-size: 1.1rem;
+    border-bottom: 1px solid #334155;
+    padding-bottom: 6px;
+}
+
+.form-control {
+    margin-bottom: 12px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 0.85rem;
+    color: #cbd5e1;
+}
+
+input, select {
+    width: 100%;
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid #334155;
+    background-color: #0f172a;
+    color: white;
+    outline: none;
+}
+
+.btn {
+    width: 100%;
+    padding: 12px;
+    background-color: #0284c7;
+    border: none;
+    border-radius: 6px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 5px;
+}
+
+.btn:hover {
+    background-color: #0369a1;
+}
+
+.list {
+    list-style: none;
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+.list li {
+    background-color: #0f172a;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    border-radius: 6px;
+    margin-bottom: 8px;
+    position: relative;
+}
+
+.list li.plus { border-left: 5px solid #34d399; }
+.list li.minus { border-left: 5px solid #f87171; }
+
+.delete-btn {
+    background-color: #ef4444;
+    color: white;
+    border: none;
+    padding: 2px 8px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.8rem;
+    margin-left: 10px;
+}
