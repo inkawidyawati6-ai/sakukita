@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SakuKita - Catat Keuangan Remaja</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1>SakuKita</h1>
+            <p>Catat Keuangan, Amankan Masa Depan</p>
+        </header>
+
+        <!-- Kartu Ringkasan Keuangan -->
+        <div class="balance-card">
+            <h3>Sisa Saldo</h3>
+            <h2 id="balance">Rp 0</h2>
+            <div class="summary-box">
+                <div class="inc-box">
+                    <span>Pemasukan</span>
+                    <p id="money-plus" class="money plus">+Rp 0</p>
+                </div>
+                <div class="exp-box">
+                    <span>Pengeluaran</span>
+                    <p id="money-minus" class="money minus">-Rp 0</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Form Tambah Transaksi -->
+        <div class="form-container">
+            <h3>Tambah Transaksi Baru</h3>
+            <form id="form">
+                <div class="form-control">
+                    <label for="text">Keterangan</label>
+                    <input type="text" id="text" placeholder="Misal: Uang Saku, Jajan Boba..." required />
+                </div>
+                
+                <div class="form-control">
+                    <label for="amount">Nominal (Rp)</label>
+                    <input type="number" id="amount" placeholder="Masukkan jumlah uang..." required />
+                </div>
+
+                <div class="form-control">
+                    <label for="type">Jenis Transaksi</label>
+                    <select id="type">
+                        <option value="income">Pemasukan (+)</option>
+                        <option value="expense">Pengeluaran (-)</option>
+                    </select>
+                </div>
+
+                <button class="btn">Simpan Catatan</button>
+            </form>
+        </div>
+
+        <!-- Daftar Riwayat -->
+        <div class="history-container">
+            <h3>Riwayat Transaksi</h3>
+            <ul id="list" class="list"></ul>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+
+    <!-- Mendaftarkan Service Worker agar BISA BUKA OFFLINE -->
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('./sw.js')
+                    .then(reg => console.log('Mode Offline Siap!'))
+                    .catch(err => console.log('Gagal mengaktifkan mode offline', err));
+            });
+        }
+    </script>
+</body>
+</html>
